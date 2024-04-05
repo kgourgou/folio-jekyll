@@ -1,6 +1,6 @@
 ---
-layout: distill
-title: "Comparing what different operations do to the H_0 homology of a point cloud."
+layout: post
+title: "Comparing what different operations do to the $$H_0$$ homology of a point cloud."
 date: 2024-02-16 22-47-02 +0000
 category: blog
 tags: 
@@ -14,7 +14,7 @@ The math are really interesting (and are for another post), but I like to have s
 
 ## The theoretical minimum
 
-The densities below are kernel-density-estimates (aka., probability densities) of the “death times” of the \(H_0\) homology for the \(X\) point cloud (the one created with `make_classification` below). But what does “death time” mean here?
+The densities below are kernel-density-estimates (aka., probability densities) of the “death times” of the $$H_0$$ homology for the $$X$$ point cloud (the one created with `make_classification` below). But what does “death time” mean here?
 
 Persistent homology (PH) is all about understanding the aspects of the shape of a manifold from sampled points (aka, a point cloud). In this note, we are looking at only one attribute that is captured by PH, the connected components of the manifold. PH looks at the point cloud at various scales, from the scale of the individual points to the scale of the entire dataset. As PH works through the different scales, it identifies when connected components get created (birth) and when they merge (death, for some of them). As every point on its own initially constitutes a connected component, the birth times are all equal to zero.
 
