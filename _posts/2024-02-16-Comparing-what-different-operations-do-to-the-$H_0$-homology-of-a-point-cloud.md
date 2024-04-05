@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Comparing what different operations do to the $$H_0$$ homology of a point cloud."
+title: "Comparing what different operations do to the H_0 homology of a point cloud."
 date: 2024-02-16 22-47-02 +0000
 category: blog
 tags: 
