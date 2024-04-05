@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://kgourgou.me/al-folio/sitemap.xml
+Sitemap: https://kgourgou.me/sitemap.xml
