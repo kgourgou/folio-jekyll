@@ -3,11 +3,11 @@ layout: distill
 title: "Rewriting the Kullback-Leibler with an integral transform"
 date: 2020-01-20 16-58-15 +0000
 category: blog
-tags: "math" 
-
+tags: "math"
 ---
 
 I recently read this nice integral representation of the logarithm in 1912.05812v1 by Neri Merhan and Igar Sason. Most ideas in this post are from there. The transform is:
+
 $$
 \log(x)=\int_{0}^{\infty}\frac{e^{-t}-e^{-tx}}{t}dt.
 $$

@@ -6,13 +6,14 @@ category: blog
 tags:
 ---
 
-
 I haven’t looked at this in a while, so thought I would revise a bit.
 
 To start with, I have a variable, say, $$Y\sim P$$. Given data from this variable, $$y_i$$, we can estimate the mean
+
 $$
 E[Y]\approx S_N=\frac{1}{N}\sum_{i=1}^{N}y_i.
 $$
+
 The estimator we all know and use. It’s unbiased, but it may have large variance, which means that for a fixed N, most random sums could fall away from $$E[Y]$$. What can we do to improve on this?
 
 One idea is to introduce a new variable, $$X$$. Then, we adjust the data as
@@ -33,7 +34,6 @@ $$\mathrm{Var}[Y'] = \mathrm{Var}[Y] + \mathrm{Var}[Y] - 2\mathrm{Cov}[Y,Y] = 0,
 
 which is the best possible variance. Realistically, we are back to where we started if we set $$X=-Y$$, however if we have other variables that are close to $$-Y$$, then this idea can get quite useful (and dramatically reduce variance).
 
-
 ## In hypothesis testing
 
 Why would all this be useful for hypothesis testing?
@@ -42,14 +42,13 @@ To conduct it, we first split the population to two groups, traditionally called
 
 Suppose that the difference is indeed due to $$Z$$. If we use data to estimate $$E[Y_{T}-Y_{C}]$$, the estimator can have variance and that will affect how small an effect we can confidently separate from random chance.
 
-We are now thinking about the "*power* " of a hypothesis test, and there are at least three ways to improve our situation from here:
+We are now thinking about the "_power_ " of a hypothesis test, and there are at least three ways to improve our situation from here:
 
 1. Give up on the small effect size and go for a larger one.
 2. Get more $$Y_T, Y_C$$ data for the estimator, i.e., make the groups larger.
 3. Use other covariates, $$X$$, to reduce the variance of the ATE estimator. Only covariates that are independent of the way the groups are split can be used, for example pre-experiment data.
 
 Now we can discuss two ways to increase the power of the test by using 3.
-
 
 ### CUPED and CUPAC
 
@@ -65,5 +64,3 @@ $$Y'_T=Y_{T}-(\hat{Y}_T-E[\hat{Y}_T]),$$
 and similarly for $$Y_C$$. Instead of the original ATE, we will then construct an estimator for $$E[Y'_T-Y'_C]$$ which, because of our control variates method, will have smaller variance!
 
 CUPAC, aka., Control Using Predictions As Covariates, introduced by DoorDash's engineering, [Li, Tang, and Bauman](https://doordash.engineering/2020/06/08/improving-experimental-power-through-control-using-predictions-as-covariate-cupac/), takes this one step further: there's nothing special about using a linear model. One can use a more expressive ML model, get a closer fit to $$Y$$, and reduce variance further.
-
-

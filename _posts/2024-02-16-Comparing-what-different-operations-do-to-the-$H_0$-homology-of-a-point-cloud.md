@@ -3,10 +3,8 @@ layout: post
 title: "Comparing what different operations do to the H_0 homology of a point cloud."
 date: 2024-02-16 22-47-02 +0000
 category: blog
-tags: 
+tags:
 ---
-
-
 
 I’ve recently become interested in [persistent homology](https://jeremykun.com/2013/04/03/homology-theory-a-primer/) and using its statistics to understand how different operations change the shape of data manifolds.
 

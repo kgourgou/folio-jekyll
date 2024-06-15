@@ -3,9 +3,8 @@ layout: distill
 title: "Stein and the Normal Distribution"
 date: 2021-01-22 19-32-07 +0000
 category: blog
-tags: 
+tags:
 ---
-
 
 Hello and happy 2021!
 
@@ -47,4 +46,3 @@ by multiplying with a smooth function $$f$$ and integrating can be repeated to g
 [Stein
 operators](https://en.wikipedia.org/wiki/Stein%27s_method#The_Stein_operator)
 for other distributions, e.g., the exponential, etc.
-
