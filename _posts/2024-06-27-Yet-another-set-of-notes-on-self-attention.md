@@ -1,12 +1,9 @@
 ---
-
 layout: distill
-title: "Yet another set of notes on self-attention"
+title: ‘Yet another set of notes on self-attention’
 date: 2024-06-27 19-12-28 +0100
 category: 
-
 tags:
-
 ---
 
 
@@ -57,7 +54,13 @@ We need to calculate the matrix product $$QK^T$$ which has computational cost $$
 
 After this part, when dealing with a transformer block, we have an MLP layer that takes as input each output from the attention layer ($$n$$ of them in total). This layer has cost $$O(n^2D)$$. Therefore, the total cost is $$\max\{O(nD^2), O(n^2D)\}$$.
 
- $$D$$ is fixed at the time the transformer is designed, whereas $$n$$ is the length of the input sequence, so you can see which of the two is going to be a challenge during inference with large inputs. 
+ $$D$$ is fixed at the time the transformer is designed, whereas $$n$$​ is the length of the input sequence, so you can see which of the two is going to be a challenge during inference with large inputs. 
+
+
+
+
+
+##### Footnotes
 
 
 [^1]: Query / Key / Value is a retrieval reference; [see for example on cross-validated.](https://stats.stackexchange.com/questions/421935/what-exactly-are-keys-queries-and-values-in-attention-mechanisms)
