@@ -20,20 +20,37 @@ Let’s get started. We have a matrix $$X\in\mathbb{R}^{n\times m}$$ which repre
 
 Let’s suppose that we are in the business of modeling, so we would like to map $$X$$ to a $$Y\in \mathbb{R}^{n\times m}$$ such that each m-dimensional vector in $$Y$$ contains information from all $$X_j$$ ($$X_j$$ being the $$j$$-th column vector). Perhaps the simplest way is $$ Y_i=\sum_jA_{ij}X_j, $$ where we assume that $$A_{ij}\in [0,1]$$ for all $$i,j$$. Restricting $$A_{ij}$$ such that $$\sum_{j}A_{ij}=1$$ for all $$i$$ has some nice properties, we can now think of $$Y_i$$ as a weighted mean of the $$X_j$$, and we just get to decide how much of each $$X_j$$ to use.
 
-Following this recipe further, we can pick $$A_{ij}$$ according to how relevant each $$X_j$$ is to every other. One way to capture relevance is through similarity, leading to “*dot-product self-attention*”[^2].
+Following this recipe further, we can pick $$A_{ij}$$ according to how relevant each $$X_j$$​ is to every other. One way to capture relevance is through similarity, leading to “*dot-product self-attention*”[^2]:
 
-$$A_{ij}=\text{softmax}(XX^T)_{ij}=\frac{\exp(X_i^TX_j)}{\sum_{k}\exp(X_i^TX_k)}.$$
+
+
+$$A_{ij}=\text{softmax}(XX^T)_{ij}=\frac{\exp(X_i^TX_j)}{\sum_{k}\exp(X_i^TX_k)}.$$​
+
+
 
 As $$X\in\mathbb{R}^{n\times m}$$, $$XX^T$$ has dimensions $$n^2$$​, i.e., it is quadratic on sequence size. 
 
- To get $$Y$$ $$Y=\text{softmax}(XX^T)X.$$
+To get $$Y$$, we can just do $$Y=\text{softmax}(XX^T)X.$$​
+
 This is fine, but: 
 
 1. there’s nothing learnable here (how do we know that the raw $$X$$ is in the right representation to get the best possible $$Y$$ for our task?) and
 2. every dimension of an $$X_i$$ gets the same weight. 
 
-We can address these points by introducing a new matrix, $$U\in\mathbb{R}^{D\times D}$$, with learnable parameters such that $$\tilde{X} = XU$$, and so $$ Y=\text{softmax}(\tilde{X}\tilde{X}^T)\tilde{X}=\text{softmax}(XUU^TX^T)XU. $$ Progress, but now $$\tilde{X}\tilde{X}^T$$ is always a symmetric matrix regardless of $$U$$, so we cannot capture asymmetric relationships. This motivates using different parameters for the parts of the attention matrix and the final mapping: $$ \begin{align} Q&=XW_Q,\ W_Q\in\mathbb{R}^{m\times D_K},\\ K&=XW_k,\ W_K\in\mathbb{R}^{m\times D_K},\\ V&=XW_V,\ W_V\in\mathbb{R}^{m\times D_V}. \end{align} $$
-Those are the celebrated query, key, and value matrices[^1], respectively, all learnable. Typically, $$D=D_K=D_V$$ makes it easier to work things out. With those matrices, we adjust attention as $$ Y=\text{softmax}(QK^T)V. $$ Quick dimensionality check:
+We can address these points by introducing a new matrix, $$U\in\mathbb{R}^{D\times D}$$, with learnable parameters such that $$\tilde{X} = XU$$, and so
+
+
+
+ $$ Y=\text{softmax}(\tilde{X}\tilde{X}^T)\tilde{X}=\text{softmax}(XUU^TX^T)XU. $$ 
+
+
+
+Progress, but now $$\tilde{X}\tilde{X}^T$$ is always a symmetric matrix regardless of $$U$$, so we cannot capture asymmetric relationships. This motivates using different parameters for the parts of the attention matrix and the final mapping: 
+
+$$ \begin{align} Q&=XW_Q,\ W_Q\in\mathbb{R}^{m\times D_K},\\ K&=XW_k,\ W_K\in\mathbb{R}^{m\times D_K},\\ V&=XW_V,\ W_V\in\mathbb{R}^{m\times D_V}. \end{align} $$
+
+Those are the celebrated query, key, and value matrices[^1], respectively, all learnable. Typically, $$D=D_K=D_V$$ makes it easier to work things out. With those matrices, we adjust attention as $$ Y=\text{softmax}(QK^T)V. $$​​ Quick dimensionality check:
+
 - The $$\text{softmax}(QK^T)$$ part is a matrix with dimensions $$n\times n$$, where $$n$$: number of elements in sequence. 
 - The matrix $$V$$ has dimensions $$n\times D_V$$. 
 - So the matrix $$Y$$ has dimensions $$n\times D_V$$. 
