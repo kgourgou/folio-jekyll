@@ -28,7 +28,7 @@ $$A_{ij}=\text{softmax}(XX^T)_{ij}=\frac{\exp(X_i^TX_j)}{\sum_{k}\exp(X_i^TX_k)}
 
 
 
-As $$X\in\mathbb{R}^{n\times m}$$, $$XX^T$$ has dimensions $$n^2$$​, i.e., it is quadratic on sequence size. 
+As $$X\in\mathbb{R}^{n\times m}$$, $$XX^T$$ has dimensions $$n \times n$$​, i.e., it is quadratic on sequence size. 
 
 To get $$Y$$, we can just do $$Y=\text{softmax}(XX^T)X.$$​
 
