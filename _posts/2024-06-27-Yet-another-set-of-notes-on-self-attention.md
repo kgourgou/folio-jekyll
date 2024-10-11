@@ -51,7 +51,7 @@ $$ \begin{align} Q&=XW_Q,\ W_Q\in\mathbb{R}^{m\times D_K},\\ K&=XW_k,\ W_K\in\ma
 
 Those are the celebrated query, key, and value matrices[^1], respectively, all learnable. Typically, $$D=D_K=D_V$$ makes it easier to work things out. With those matrices, we adjust attention as $$ Y=\text{softmax}(QK^T)V. $$​​ Quick dimensionality check:
 
-- The $$\text{softmax}(QK^T)$$ part is a matrix with dimensions $$n\times n$$, where $$n$$: number of elements in sequence. 
+- The $$\text{softmax}(QK^T)$$ part is a matrix with dimensions $$n\times n$$, where $$n$$ : number of elements in sequence. 
 - The matrix $$V$$ has dimensions $$n\times D_V$$. 
 - So the matrix $$Y$$ has dimensions $$n\times D_V$$. 
 
@@ -59,7 +59,15 @@ Those are the celebrated query, key, and value matrices[^1], respectively, all l
 
 While $$Y=\text{softmax}(QK^T)V$$ is very close to the usual self-attention, we are missing a scaling constant. Let’s derive this here. 
 
-Suppose that you have two $$D_K$$-dimensional vectors $$q,k$$, each one with elements that have zero mean and unit variance and are independent. Then: $$ \text{Var}[(q,k)]=\sum_{i=1}^{D_K} \text{Var}[q_ik_i]=\sum_{i=1}^{D_K}1=D_K. $$We used independence to split up $$\text{Var}[(q,k)]$$. Therefore, the standard deviation of $$(q,k)$$ is $$\sqrt{D_K}$$. This is what we need to make sure that the parts of $$QK^{T}$$ have unit variance. This helps us control how big the products are, which makes learning easier. So, finally $$ Y=\text{softmax}(QK^T/\sqrt{D_K})V, $$ which is the usual form of dot-product attention.
+Suppose that you have two $$D_K$$-dimensional vectors $$q,k$$, each one with elements that have zero mean and unit variance and are independent. Then:
+
+
+
+ $$ \text{Var}[(q,k)]=\sum_{i=1}^{D_K} \text{Var}[q_ik_i]=\sum_{i=1}^{D_K}1=D_K.$$ 
+
+
+
+We used independence to split up $$\text{Var}[(q,k)]$$. Therefore, the standard deviation of $$(q,k)$$ is $$\sqrt{D_K}$$. This is what we need to make sure that the parts of $$QK^{T}$$ have unit variance. This helps us control how big the products are, which makes learning easier. So, finally $$ Y=\text{softmax}(QK^T/\sqrt{D_K})V, $$ which is the usual form of dot-product attention.
 
 ### Does this make sense?
 
