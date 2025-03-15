@@ -8,4 +8,4 @@ tags: jpmc
 
 I presented our work on unlearning at the [U and Me workshop](https://sites.google.com/view/u-and-me-workshop) at ECCV 2024. The workshop was a great opportunity to discuss the latest research on unlearning and to meet other researchers working on similar topics.
 
-Frankly the highlight was the invited talks by David Bau and Rita Cucchiara. [They both shared their slides](https://sites.google.com/view/u-and-me-workshop/schedule), so there's no reason for me post pictures here.
+The highlight was the invited talks by David Bau and Rita Cucchiara. [They both shared their slides](https://sites.google.com/view/u-and-me-workshop/schedule), so there's no reason for me post pictures here.

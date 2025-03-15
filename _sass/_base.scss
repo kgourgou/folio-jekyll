@@ -1119,3 +1119,28 @@ swiper-container {
   --swiper-pagination-color: var(--global-theme-color);
   --swiper-pagination-bullet-inactive-color: var(--global-text-color);
 }
+
+// Hugging Face Widget
+
+.huggingface-widget {
+  margin: 1.5rem 0;
+  
+  .hf-profile-badge {
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+  
+  .hf-model, .hf-space, .hf-dataset {
+    margin-top: 1rem;
+    border: 1px solid var(--global-divider-color);
+    border-radius: 5px;
+    overflow: hidden;
+  }
+
+  .hf-models-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+  }
+}
