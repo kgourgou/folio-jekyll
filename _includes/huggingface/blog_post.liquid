@@ -1,0 +1,24 @@
+{% assign post_id = include.post %}
+{% assign post_parts = post_id | split: "/" %}
+{% assign post_name = post_parts | last %}
+{% assign post_name_formatted = post_name | replace: "-", " " | capitalize %}
+
+<div class="repo p-2">
+  <div class="repo-title d-flex align-items-center">
+    <a href="https://huggingface.co/blog/{{ post_id }}" target="_blank" rel="external noopener">
+      <div>📝 {{ post_name_formatted }}</div>
+    </a>
+  </div>
+  <div class="repo-body">
+    <div class="repo-description">
+      <iframe 
+        src="https://huggingface.co/blog/{{ post_id }}?iframe=true" 
+        frameborder="0"
+        width="100%"
+        height="300px"
+        loading="lazy"
+        class="mt-2"
+      ></iframe>
+    </div>
+  </div>
+</div>

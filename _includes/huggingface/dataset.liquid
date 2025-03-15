@@ -1,0 +1,22 @@
+{% assign dataset_id = include.dataset %}
+{% assign dataset_name = dataset_id | split: "/" | last %}
+
+<div class="repo p-2">
+  <div class="repo-title d-flex align-items-center">
+    <a href="https://huggingface.co/datasets/{{ dataset_id }}" target="_blank" rel="external noopener">
+      <div>📊 {{ dataset_name }}</div>
+    </a>
+  </div>
+  <div class="repo-body">
+    <div class="repo-description">
+      <iframe 
+        src="https://huggingface.co/datasets/{{ dataset_id }}?iframe=true" 
+        frameborder="0"
+        width="100%"
+        height="300px"
+        loading="lazy"
+        class="mt-2"
+      ></iframe>
+    </div>
+  </div>
+</div>

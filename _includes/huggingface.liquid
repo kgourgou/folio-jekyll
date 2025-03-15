@@ -1,0 +1,58 @@
+<!-- _includes/huggingface.liquid -->
+{% assign username = include.username %}
+{% assign model_id = include.model_id %}
+{% assign space_id = include.space_id %}
+{% assign dataset_id = include.dataset_id %}
+{% assign widget_width = include.width | default: "100%" %}
+{% assign widget_height = include.height | default: "500px" %}
+{% assign widget_class = include.class %}
+
+<div class="huggingface-widget {% if widget_class %}{{ widget_class }}{% endif %}">
+  {% if username %}
+    <!-- Profile badge -->
+    <div class="hf-profile-badge">
+      <a href="https://huggingface.co/{{ username }}" target="_blank">
+        <img src="https://img.shields.io/badge/🤗_HuggingFace-{{ username }}-yellow?style=for-the-badge&logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAACXBIWXMAAAsTAAALEwEAmpwYAAAB80lEQVR4nO2WO2gVQRSGv5uYRCxiIEaMLV5jLBWJWtjbWqUxdkJQiYqgnY22SkBLwUoQCVbaidYWKlpILJREcm9CEkGJhRC5eH0yMLCse3b3nHtRxB8Ge+c/c745Z2b2nKHgP9ACXAeGgFngDfAc6AUuAptL+Z8F+oCPwKKyH4WP78Au//JO4JtS/LYY8wl4C+SAjcARoAMYDvi+wZ29DnjkhP1VSmCN9mDgO7wDXAJq3LgVOMNaI5RcnWNyTMKkuB14pYQfBFYE/NeFC3QFRqXsU0rpfqWzLwLVAVt1YFSpngWOKyUH8+OAueCc+rwJ/FYKhxMuKFYsJfMeKMUzwB2lbCy5vKBYaQl9w8AKpfQkULvE8etiRY6Fxh9Kyc+QQylQJ+iOO1bYaNRKOZQCNTtPxR3HhZKbAacVwA7gYt5eHfE5KKytGwN2HxWyLuWtVRp0ZvODRgfwTB2UKKgBQ0mZvKbwwdDsYhkEVgb8h1yGS4FaxZXrNGZDnj9pP22C3ZLAd1jhA5Sm2FPU6XEVKSb7lPtXa4aq1f+EKnOp2ueycm3xZ/eCyvARsBfYUuSdOuBQwOahKvNJYLPJqb4gO3k9sFvVYeO4EF4nrNXGlY79bnwq9nEpWAd0A+OuEiZcVR4CrlCQiT8c9FDmB+EaVAAAAABJRU5ErkJggg==&labelColor=white" alt="Hugging Face {{ username }}">
+      </a>
+    </div>
+  {% endif %}
+
+  {% if model_id %}
+    <!-- Model card embed -->
+    <div class="hf-model">
+      <iframe 
+        src="https://huggingface.co/{{ model_id }}?iframe=true" 
+        frameborder="0" 
+        width="{{ widget_width }}" 
+        height="{{ widget_height }}"
+        loading="lazy"
+      ></iframe>
+    </div>
+  {% endif %}
+
+  {% if space_id %}
+    <!-- Space embed -->
+    <div class="hf-space">
+      <iframe 
+        src="https://huggingface.co/spaces/{{ space_id }}?iframe=true" 
+        frameborder="0" 
+        width="{{ widget_width }}" 
+        height="{{ widget_height }}"
+        loading="lazy"
+      ></iframe>
+    </div>
+  {% endif %}
+
+  {% if dataset_id %}
+    <!-- Dataset embed -->
+    <div class="hf-dataset">
+      <iframe 
+        src="https://huggingface.co/datasets/{{ dataset_id }}?iframe=true" 
+        frameborder="0" 
+        width="{{ widget_width }}" 
+        height="{{ widget_height }}"
+        loading="lazy"
+      ></iframe>
+    </div>
+  {% endif %}
+</div>

@@ -1,0 +1,12 @@
+{% assign username = include.username %}
+
+<div class="repo p-2">
+  <div class="repo-title d-flex align-items-center justify-content-center">
+    <a href="https://huggingface.co/{{ username }}" target="_blank" rel="external noopener">
+      <div class="d-flex align-items-center">
+        <img src="https://huggingface.co/datasets/huggingface/brand-assets/resolve/main/hf-logo.svg" width="30" class="me-2" alt="HuggingFace Logo">
+        <span>{{ username }}</span>
+      </div>
+    </a>
+  </div>
+</div>

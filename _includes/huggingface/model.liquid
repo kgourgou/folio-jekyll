@@ -1,0 +1,22 @@
+{% assign model_id = include.model %}
+{% assign model_name = model_id | split: "/" | last %}
+
+<div class="repo p-2">
+  <div class="repo-title d-flex align-items-center">
+    <a href="https://huggingface.co/{{ model_id }}" target="_blank" rel="external noopener">
+      <div>🤗 {{ model_name }}</div>
+    </a>
+  </div>
+  <div class="repo-body">
+    <div class="repo-description">
+      <iframe 
+        src="https://huggingface.co/{{ model_id }}?iframe=true" 
+        frameborder="0"
+        width="100%"
+        height="300px"
+        loading="lazy"
+        class="mt-2"
+      ></iframe>
+    </div>
+  </div>
+</div>
