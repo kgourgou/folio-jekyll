@@ -57,32 +57,70 @@ nav_order: 4
 ---
 {% endif %}
 
-{% if site.data.huggingface.huggingface_spaces %}
-### Spaces
+{% if site.data.huggingface.huggingface_spaces or site.data.huggingface.huggingface_datasets or site.data.huggingface.huggingface_blog_posts %}
+### Hugging Face Resources
 
-<div class="repositories d-flex flex-wrap flex-md-row flex-column justify-content-between align-items-center">
-  {% for space in site.data.huggingface.huggingface_spaces %}
-    {% include huggingface/space.liquid space=space %}
-  {% endfor %}
+<div class="row">
+  {% if site.data.huggingface.huggingface_spaces %}
+  <div class="col-md-4">
+    <h4><i class="fa-solid fa-rocket"></i> Spaces</h4>
+    <ul class="hf-list">
+    {% for space in site.data.huggingface.huggingface_spaces %}
+      {% assign space_name = space | split: "/" | last %}
+      <li>
+        <a href="https://huggingface.co/spaces/{{ space }}" target="_blank" rel="noopener">
+          {{ space_name }}
+        </a>
+      </li>
+    {% endfor %}
+    </ul>
+  </div>
+  {% endif %}
+  
+  {% if site.data.huggingface.huggingface_datasets %}
+  <div class="col-md-4">
+    <h4><i class="fa-solid fa-database"></i> Datasets</h4>
+    <ul class="hf-list">
+    {% for dataset in site.data.huggingface.huggingface_datasets %}
+      {% assign dataset_name = dataset | split: "/" | last %}
+      <li>
+        <a href="https://huggingface.co/datasets/{{ dataset }}" target="_blank" rel="noopener">
+          {{ dataset_name }}
+        </a>
+      </li>
+    {% endfor %}
+    </ul>
+  </div>
+  {% endif %}
+  
+  {% if site.data.huggingface.huggingface_blog_posts %}
+  <div class="col-md-4">
+    <h4><i class="fa-solid fa-pen"></i> Blog Posts</h4>
+    <ul class="hf-list">
+    {% for post in site.data.huggingface.huggingface_blog_posts %}
+      {% assign post_name = post | split: "/" | last | replace: "-", " " | capitalize %}
+      <li>
+        <a href="https://huggingface.co/blog/{{ post }}" target="_blank" rel="noopener">
+          {{ post_name }}
+        </a>
+      </li>
+    {% endfor %}
+    </ul>
+  </div>
+  {% endif %}
 </div>
-{% endif %}
 
-{% if site.data.huggingface.huggingface_datasets %}
-### Datasets
-
-<div class="repositories d-flex flex-wrap flex-md-row flex-column justify-content-between align-items-center">
-  {% for dataset in site.data.huggingface.huggingface_datasets %}
-    {% include huggingface/dataset.liquid dataset=dataset %}
-  {% endfor %}
-</div>
-{% endif %}
-
-{% if site.data.huggingface.huggingface_blog_posts %}
-### Blog Posts
-
-<div class="repositories d-flex flex-wrap flex-md-row flex-column justify-content-between align-items-center">
-  {% for post in site.data.huggingface.huggingface_blog_posts %}
-    {% include huggingface/blog_post.liquid post=post %}
-  {% endfor %}
-</div>
+<style>
+  .hf-list {
+    list-style-type: none;
+    padding-left: 0;
+  }
+  .hf-list li {
+    margin-bottom: 0.5rem;
+  }
+  .hf-list a {
+    display: inline-block;
+    padding: 0.25rem 0;
+  }
+</style>
 {% endif %}

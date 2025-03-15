@@ -18,41 +18,35 @@
   {% endif %}
 
   {% if model_id %}
-    <!-- Model card embed -->
+    <!-- Model card link -->
     <div class="hf-model">
-      <iframe 
-        src="https://huggingface.co/{{ model_id }}?iframe=true" 
-        frameborder="0" 
-        width="{{ widget_width }}" 
-        height="{{ widget_height }}"
-        loading="lazy"
-      ></iframe>
+      <p>
+        <a href="https://huggingface.co/{{ model_id }}" target="_blank" rel="external noopener" class="btn btn-sm btn-primary">
+          <i class="fa-solid fa-brain me-1"></i> View Model: {{ model_id | split: "/" | last }}
+        </a>
+      </p>
     </div>
   {% endif %}
 
   {% if space_id %}
-    <!-- Space embed -->
+    <!-- Space link -->
     <div class="hf-space">
-      <iframe 
-        src="https://huggingface.co/spaces/{{ space_id }}?iframe=true" 
-        frameborder="0" 
-        width="{{ widget_width }}" 
-        height="{{ widget_height }}"
-        loading="lazy"
-      ></iframe>
+      <p>
+        <a href="https://huggingface.co/spaces/{{ space_id }}" target="_blank" rel="external noopener" class="btn btn-sm btn-primary">
+          <i class="fa-solid fa-rocket me-1"></i> View Space: {{ space_id | split: "/" | last }}
+        </a>
+      </p>
     </div>
   {% endif %}
 
   {% if dataset_id %}
-    <!-- Dataset embed -->
+    <!-- Dataset link -->
     <div class="hf-dataset">
-      <iframe 
-        src="https://huggingface.co/datasets/{{ dataset_id }}?iframe=true" 
-        frameborder="0" 
-        width="{{ widget_width }}" 
-        height="{{ widget_height }}"
-        loading="lazy"
-      ></iframe>
+      <p>
+        <a href="https://huggingface.co/datasets/{{ dataset_id }}" target="_blank" rel="external noopener" class="btn btn-sm btn-primary">
+          <i class="fa-solid fa-database me-1"></i> View Dataset: {{ dataset_id | split: "/" | last }}
+        </a>
+      </p>
     </div>
   {% endif %}
 </div>
