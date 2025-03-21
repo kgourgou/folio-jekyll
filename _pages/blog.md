@@ -124,8 +124,9 @@ Research and curiosities in math, machine learning, and statistics.
     {% else %}
       {% assign postlist = site.posts %}
     {% endif %}
-
-    {% for post in postlist %}
+    
+    {% assign filtered_posts = postlist %}
+    {% for post in filtered_posts %}
 
     {% if post.external_source == blank %}
       {% assign read_time = post.content | number_of_words | divided_by: 180 | plus: 1 %}

@@ -10,7 +10,7 @@ I'm a fan of both SetFit and integrated gradients, so I wrote this tiny library 
 
 ## What is SetFit ?
 
-It's a [language-model-tuning paradigm ](https://huggingface.co/blog/setfit) for few-shot learning with language models without using prompts. It relies on contrastive learning and the authors published a really nice library that makes the method plug & play with sentence-transformers.
+It's a [language-model-tuning paradigm](https://huggingface.co/blog/setfit) for few-shot learning with language models without using prompts. It relies on contrastive learning and the authors published a really nice library that makes the method plug & play with sentence-transformers.
 
 I have been contributing some time to that library on Github as well.
 
