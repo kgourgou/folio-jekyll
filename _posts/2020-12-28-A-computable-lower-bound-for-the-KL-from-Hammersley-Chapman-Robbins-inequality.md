@@ -1,5 +1,5 @@
 ---
-layout: distill
+layout: post 
 title: "A computable lower bound for the KL from Hammersley-Chapman-Robbins inequality"
 date: 2020-12-28 17-43-32 +0000
 category: blog

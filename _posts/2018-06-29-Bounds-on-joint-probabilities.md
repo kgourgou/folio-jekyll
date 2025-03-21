@@ -1,5 +1,5 @@
 ---
-layout: distill
+layout: post 
 title: "Bounds on joint probabilities - Part I"
 date: 2018-06-29 12-31-22 +0100
 category:

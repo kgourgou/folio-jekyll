@@ -1,5 +1,5 @@
 ---
-layout: distill
+layout: post 
 title: 'Quick notes on the "Enhanced Cauchy Schwarz inequality and some of its statistical applications'
 date: 2024-04-11 12-11-19 +0100
 category:

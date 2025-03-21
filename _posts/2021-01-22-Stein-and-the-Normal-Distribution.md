@@ -1,5 +1,5 @@
 ---
-layout: distill
+layout: post 
 title: "Stein and the Normal Distribution"
 date: 2021-01-22 19-32-07 +0000
 category: blog

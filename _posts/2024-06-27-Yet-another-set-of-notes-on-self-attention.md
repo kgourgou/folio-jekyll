@@ -1,5 +1,5 @@
 ---
-layout: distill
+layout: post 
 title: ‘Yet another set of notes on self-attention’
 date: 2024-06-27 19-12-28 +0100
 category: 

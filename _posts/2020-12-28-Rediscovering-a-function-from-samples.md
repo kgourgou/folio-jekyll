@@ -1,5 +1,5 @@
 ---
-layout: distill
+layout: post 
 title: "Rediscovering a function from samples"
 date: 2020-12-28 18-06-27 +0000
 category: blog

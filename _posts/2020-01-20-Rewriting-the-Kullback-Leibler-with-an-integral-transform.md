@@ -1,5 +1,5 @@
 ---
-layout: distill
+layout: post
 title: "Rewriting the Kullback-Leibler with an integral transform"
 date: 2020-01-20 16-58-15 +0000
 category: blog
