@@ -73,6 +73,9 @@ $$D$$ is fixed at the time the transformer is designed, whereas $$n$$​ is the 
 ##### Footnotes
 
 [^1]: Query / Key / Value is a retrieval reference; [see for example on cross-validated.](https://stats.stackexchange.com/questions/421935/what-exactly-are-keys-queries-and-values-in-attention-mechanisms)
+
 [^2]: There are so many variants of attention now: [grouped attention](https://arxiv.org/pdf/2305.13245), [linearised attention](https://arxiv.org/abs/2006.16236), etc.
+
 [^3]: Bishop, C.M. and Bishop, H., 2023. _Deep learning: Foundations and concepts_. Springer Nature.
+
 [^4]: Though, the authors of [“Attention is all you need”](https://arxiv.org/pdf/1706.03762) do mention this assumption in the celebrated “footnote 4”.
