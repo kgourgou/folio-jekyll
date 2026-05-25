@@ -33,13 +33,13 @@ Research and curiosities in math, machine learning, and statistics.
 
 {% if site.display_tags or site.display_categories %}
 
-  {% assign all_tags = "" | split: "" %}
-  {% for post in site.posts %}
-    {% for tag in post.tags %}
-      {% assign all_tags = all_tags | push: tag %}
-    {% endfor %}
-  {% endfor %}
-  {% assign unique_tags = all_tags | uniq %}
+{% assign all_tags = "" | split: "" %}
+{% for post in site.posts %}
+{% for tag in post.tags %}
+{% assign all_tags = all_tags | push: tag %}
+{% endfor %}
+{% endfor %}
+{% assign unique_tags = all_tags | uniq %}
 
   <div class="tag-category-list">
     <ul class="p-0 m-0">
@@ -124,7 +124,7 @@ Research and curiosities in math, machine learning, and statistics.
     {% else %}
       {% assign postlist = site.posts %}
     {% endif %}
-    
+
     {% assign filtered_posts = postlist %}
     {% for post in filtered_posts %}
 

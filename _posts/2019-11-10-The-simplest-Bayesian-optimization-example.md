@@ -1,5 +1,5 @@
 ---
-layout: post 
+layout: post
 title: "The simplest Bayesian optimization example"
 date: 2019-11-10 21-18-22 +0000
 category: blog

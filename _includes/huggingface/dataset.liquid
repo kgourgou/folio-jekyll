@@ -1,5 +1,5 @@
 {% assign dataset_id = include.dataset %}
-{% assign dataset_name = dataset_id | split: "/" | last %}
+{% assign dataset_name = dataset_id | split: '/' | last %}
 
 <div class="repo p-2">
   <div class="repo-title d-flex align-items-center">
@@ -10,7 +10,9 @@
   <div class="repo-body">
     <div class="repo-description">
       <p class="mt-2">
-        <a href="https://huggingface.co/datasets/{{ dataset_id }}" target="_blank" rel="external noopener" class="btn btn-sm btn-primary">View Dataset</a>
+        <a href="https://huggingface.co/datasets/{{ dataset_id }}" target="_blank" rel="external noopener" class="btn btn-sm btn-primary"
+          >View Dataset</a
+        >
       </p>
     </div>
   </div>

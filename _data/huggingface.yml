@@ -1,11 +1,11 @@
 huggingface_users:
-- kgourgou
+  - kgourgou
 
 huggingface_datasets:
-- kgourgou/automerger-eval-dataset
+  - kgourgou/automerger-eval-dataset
 
 huggingface_spaces:
-- kgourgou/llm-decoders
+  - kgourgou/llm-decoders
 
 huggingface_blog_posts:
-- kgourgou/a-first-look-at-automerger-data
+  - kgourgou/a-first-look-at-automerger-data

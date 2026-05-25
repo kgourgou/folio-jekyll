@@ -3,8 +3,8 @@
 {% assign model_id = include.model_id %}
 {% assign space_id = include.space_id %}
 {% assign dataset_id = include.dataset_id %}
-{% assign widget_width = include.width | default: "100%" %}
-{% assign widget_height = include.height | default: "500px" %}
+{% assign widget_width = include.width | default: '100%' %}
+{% assign widget_height = include.height | default: '500px' %}
 {% assign widget_class = include.class %}
 
 <div class="huggingface-widget {% if widget_class %}{{ widget_class }}{% endif %}">
@@ -12,7 +12,10 @@
     <!-- Profile badge -->
     <div class="hf-profile-badge">
       <a href="https://huggingface.co/{{ username }}" target="_blank">
-        <img src="https://img.shields.io/badge/🤗_HuggingFace-{{ username }}-yellow?style=for-the-badge&logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAACXBIWXMAAAsTAAALEwEAmpwYAAAB80lEQVR4nO2WO2gVQRSGv5uYRCxiIEaMLV5jLBWJWtjbWqUxdkJQiYqgnY22SkBLwUoQCVbaidYWKlpILJREcm9CEkGJhRC5eH0yMLCse3b3nHtRxB8Ge+c/c745Z2b2nKHgP9ACXAeGgFngDfAc6AUuAptL+Z8F+oCPwKKyH4WP78Au//JO4JtS/LYY8wl4C+SAjcARoAMYDvi+wZ29DnjkhP1VSmCN9mDgO7wDXAJq3LgVOMNaI5RcnWNyTMKkuB14pYQfBFYE/NeFC3QFRqXsU0rpfqWzLwLVAVt1YFSpngWOKyUH8+OAueCc+rwJ/FYKhxMuKFYsJfMeKMUzwB2lbCy5vKBYaQl9w8AKpfQkULvE8etiRY6Fxh9Kyc+QQylQJ+iOO1bYaNRKOZQCNTtPxR3HhZKbAacVwA7gYt5eHfE5KKytGwN2HxWyLuWtVRp0ZvODRgfwTB2UKKgBQ0mZvKbwwdDsYhkEVgb8h1yGS4FaxZXrNGZDnj9pP22C3ZLAd1jhA5Sm2FPU6XEVKSb7lPtXa4aq1f+EKnOp2ueycm3xZ/eCyvARsBfYUuSdOuBQwOahKvNJYLPJqb4gO3k9sFvVYeO4EF4nrNXGlY79bnwq9nEpWAd0A+OuEiZcVR4CrlCQiT8c9FDmB+EaVAAAAABJRU5ErkJggg==&labelColor=white" alt="Hugging Face {{ username }}">
+        <img
+          src="https://img.shields.io/badge/🤗_HuggingFace-{{ username }}-yellow?style=for-the-badge&logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAACXBIWXMAAAsTAAALEwEAmpwYAAAB80lEQVR4nO2WO2gVQRSGv5uYRCxiIEaMLV5jLBWJWtjbWqUxdkJQiYqgnY22SkBLwUoQCVbaidYWKlpILJREcm9CEkGJhRC5eH0yMLCse3b3nHtRxB8Ge+c/c745Z2b2nKHgP9ACXAeGgFngDfAc6AUuAptL+Z8F+oCPwKKyH4WP78Au//JO4JtS/LYY8wl4C+SAjcARoAMYDvi+wZ29DnjkhP1VSmCN9mDgO7wDXAJq3LgVOMNaI5RcnWNyTMKkuB14pYQfBFYE/NeFC3QFRqXsU0rpfqWzLwLVAVt1YFSpngWOKyUH8+OAueCc+rwJ/FYKhxMuKFYsJfMeKMUzwB2lbCy5vKBYaQl9w8AKpfQkULvE8etiRY6Fxh9Kyc+QQylQJ+iOO1bYaNRKOZQCNTtPxR3HhZKbAacVwA7gYt5eHfE5KKytGwN2HxWyLuWtVRp0ZvODRgfwTB2UKKgBQ0mZvKbwwdDsYhkEVgb8h1yGS4FaxZXrNGZDnj9pP22C3ZLAd1jhA5Sm2FPU6XEVKSb7lPtXa4aq1f+EKnOp2ueycm3xZ/eCyvARsBfYUuSdOuBQwOahKvNJYLPJqb4gO3k9sFvVYeO4EF4nrNXGlY79bnwq9nEpWAd0A+OuEiZcVR4CrlCQiT8c9FDmB+EaVAAAAABJRU5ErkJggg==&labelColor=white"
+          alt="Hugging Face {{ username }}"
+        >
       </a>
     </div>
   {% endif %}
@@ -22,7 +25,7 @@
     <div class="hf-model">
       <p>
         <a href="https://huggingface.co/{{ model_id }}" target="_blank" rel="external noopener" class="btn btn-sm btn-primary">
-          <i class="fa-solid fa-brain me-1"></i> View Model: {{ model_id | split: "/" | last }}
+          <i class="fa-solid fa-brain me-1"></i> View Model: {{ model_id | split: '/' | last }}
         </a>
       </p>
     </div>
@@ -33,7 +36,7 @@
     <div class="hf-space">
       <p>
         <a href="https://huggingface.co/spaces/{{ space_id }}" target="_blank" rel="external noopener" class="btn btn-sm btn-primary">
-          <i class="fa-solid fa-rocket me-1"></i> View Space: {{ space_id | split: "/" | last }}
+          <i class="fa-solid fa-rocket me-1"></i> View Space: {{ space_id | split: '/' | last }}
         </a>
       </p>
     </div>
@@ -44,7 +47,7 @@
     <div class="hf-dataset">
       <p>
         <a href="https://huggingface.co/datasets/{{ dataset_id }}" target="_blank" rel="external noopener" class="btn btn-sm btn-primary">
-          <i class="fa-solid fa-database me-1"></i> View Dataset: {{ dataset_id | split: "/" | last }}
+          <i class="fa-solid fa-database me-1"></i> View Dataset: {{ dataset_id | split: '/' | last }}
         </a>
       </p>
     </div>

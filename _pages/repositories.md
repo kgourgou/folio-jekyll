@@ -36,6 +36,7 @@ nav_order: 4
 {% endif %}
 
 {% if site.data.repositories.github_repos %}
+
 ### Repositories
 
 <div class="repositories d-flex flex-wrap flex-md-row flex-column justify-content-between align-items-center">
@@ -48,6 +49,7 @@ nav_order: 4
 ## Hugging Face
 
 {% if site.data.huggingface.huggingface_users %}
+
 <div class="repositories d-flex flex-wrap flex-md-row flex-column justify-content-between align-items-center">
   {% for user in site.data.huggingface.huggingface_users %}
     {% include huggingface/user.liquid username=user %}
@@ -55,9 +57,11 @@ nav_order: 4
 </div>
 
 ---
+
 {% endif %}
 
 {% if site.data.huggingface.huggingface_spaces or site.data.huggingface.huggingface_datasets or site.data.huggingface.huggingface_blog_posts %}
+
 ### Hugging Face Resources
 
 <div class="row">
@@ -123,4 +127,5 @@ nav_order: 4
     padding: 0.25rem 0;
   }
 </style>
+
 {% endif %}
