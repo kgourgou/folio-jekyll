@@ -2,6 +2,7 @@
 layout: post
 title: ‘Yet another set of notes on self-attention’
 date: 2024-06-27 19-12-28 +0100
+canonical_url: https://kosti.bearblog.dev/yet-another-self-attention-tutorial/
 category:
 tags:
 hide_from_latest_posts: true
